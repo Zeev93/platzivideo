@@ -9,6 +9,7 @@ import removeIcon from '../assets/static/remove-icon.webp'
 
 import { connect } from 'react-redux'
 import { setFavorite, deleteFavorite } from '../actions'
+import { Link } from 'react-router-dom'
 
 
 const CarouselItem = props => {
@@ -34,11 +35,14 @@ const CarouselItem = props => {
         <img className="carousel-item__img" src={cover} alt={title} />
         <div className="carousel-item__details">
           <div>
-            <img
-              className="carousel-item__details--img"
-              src={playIcon}
-              alt="Play Icon"
-            />
+            <Link to={`player/${id}`}>
+              <img
+                className="carousel-item__details--img"
+                src={playIcon}
+                alt="Play Icon"
+                
+              />
+            </Link>
             {isList ? (
               <img
                 className="carousel-item__details--img"
